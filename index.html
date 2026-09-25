@@ -93,24 +93,47 @@
 
     /* Main Polaroid */
     .polaroid {
-      width: min(460px, 92vw);
+  width: min(500px, 94vw);
+  background: #ffffff;
+  padding: 15px 15px 30px;
+  position: relative;
 
-      background: #ffffff;
+  box-shadow:
+    0 25px 55px rgba(87, 38, 55, 0.18),
+    0 5px 15px rgba(87, 38, 55, 0.10);
 
-      padding: 15px 15px 28px;
+  transform: rotate(-1.5deg);
+  animation: entrance 1.3s ease forwards;
+  border-radius: 2px;
+}
 
-      position: relative;
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
 
-      box-shadow:
-        0 25px 55px rgba(87, 38, 55, 0.18),
-        0 5px 15px rgba(87, 38, 55, 0.10);
+  position: relative;
+  overflow: hidden;
 
-      transform: rotate(-1.5deg);
+  background: #f8eeee;
 
-      animation: entrance 1.3s ease forwards;
+  box-shadow:
+    inset 0 0 0 1px rgba(100, 50, 70, 0.04);
+}
 
-      border-radius: 2px;
-    }
+.photo-frame img {
+  position: absolute;
+
+  width: 133.333%;
+  height: 100%;
+
+  left: -16.666%;
+  top: 0;
+
+  object-fit: cover;
+
+  transform: rotate(-90deg);
+  transform-origin: center center;
+}
 
     /* Slight paper texture */
     .polaroid::after {
@@ -250,40 +273,40 @@
     /* Mobile */
     @media (max-width: 600px) {
 
-      body {
-        padding: 35px 13px;
+  body {
+    padding: 30px 10px;
 
-        background-size: 32px 32px;
+    background-size: 32px 32px;
 
-        background-position:
-          0 0,
-          0 16px,
-          16px -16px,
-          -16px 0;
-      }
+    background-position:
+      0 0,
+      0 16px,
+      16px -16px,
+      -16px 0;
+  }
 
-      .polaroid {
-        width: 92vw;
+  .polaroid {
+    width: 95vw;
+    padding: 11px 11px 24px;
+  }
 
-        padding: 11px 11px 23px;
-      }
+  .photo-frame {
+    aspect-ratio: 3 / 4;
+  }
 
-      .photo-frame {
-        aspect-ratio: 4 / 3;
-      }
+  .shayari {
+    padding: 21px 7px 2px;
+  }
 
-      .shayari {
-        padding: 21px 7px 2px;
-      }
+  .shayari p {
+    font-size: 20px;
+    line-height: 1.46;
+  }
 
-      .shayari p {
-        font-size: 20px;
-        line-height: 1.46;
-      }
-
-      .ending {
-        font-size: 22px;
-      }
+  .ending {
+    font-size: 22px;
+  }
+    }
 
       .tape {
         width: 92px;
